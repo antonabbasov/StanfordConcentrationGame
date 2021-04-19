@@ -8,11 +8,14 @@
 import UIKit
 
 protocol ConcentrationDelegate {
+    
     // MARK: - Instance Methods
+    
     func concentrationDidChange()
 }
 
 class Concentration {
+    
     // MARK: - Non private variables
     
     var delegate: ConcentrationDelegate? = nil

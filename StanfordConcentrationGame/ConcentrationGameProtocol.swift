@@ -9,6 +9,9 @@ import Foundation
 
 /// Represent open functionality of the concentration game
 protocol ConcentrationGame {
+    
+    // MARK: - Instance Methods
+    
     func chooseCard(at index: Int)
     func createTheme(from themes: [Theme])
 }
