@@ -9,14 +9,16 @@ import Foundation
 
 /// Represent single card for concentration game
 struct Card {
+    
     // MARK: - Non private variables
+    
     var isFaceUp = false
     var isMatched = false
     var identifier: Int
     
     // MARK: - Private variables
-    private static var identifierFactory = 0
     
+    private static var identifierFactory = 0
     
     /// Gets unique identifier for each card
     /// - Returns: Unique identifier
@@ -24,14 +26,20 @@ struct Card {
         identifierFactory += 1
         return identifierFactory
     }
-    // MARK: - Class inits
+    
+    // MARK: - Initialization
+    
     init() {
         self.identifier = Card.getUniqueIdentifier()
     }
 }
 
 // MARK: - Extensions
+
 extension Card: Hashable {
+    
+    // MARK: - Instance Methods
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
     }

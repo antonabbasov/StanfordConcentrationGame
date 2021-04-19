@@ -16,6 +16,9 @@
 		063CE3D9261F83240023A192 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CE3D8261F83240023A192 /* Card.swift */; };
 		063CE3DC262209CB0023A192 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CE3DB262209CB0023A192 /* Theme.swift */; };
 		063ED6A3262C92660054DBEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063ED6A2262C92660054DBEA /* Main.storyboard */; };
+		06C8CE88262E3BAA003AE31C /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8CE87262E3BAA003AE31C /* Int+Extension.swift */; };
+		06C8CE8B262E3BCF003AE31C /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8CE8A262E3BCF003AE31C /* Collection+Extension.swift */; };
+		06C8CE8F262E42C5003AE31C /* ConcentrationGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8CE8E262E42C5003AE31C /* ConcentrationGameProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		063CE3D8261F83240023A192 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		063CE3DB262209CB0023A192 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		063ED6A2262C92660054DBEA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
+		06C8CE87262E3BAA003AE31C /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		06C8CE8A262E3BCF003AE31C /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		06C8CE8E262E42C5003AE31C /* ConcentrationGameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGameProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +71,10 @@
 				063ED6A2262C92660054DBEA /* Main.storyboard */,
 				060EDF19261CDB7700294A11 /* ConcantrationGameViewController.swift */,
 				063CE3D5261F82560023A192 /* Concentration.swift */,
+				06C8CE8E262E42C5003AE31C /* ConcentrationGameProtocol.swift */,
 				063CE3D8261F83240023A192 /* Card.swift */,
+				06C8CE8A262E3BCF003AE31C /* Collection+Extension.swift */,
+				06C8CE87262E3BAA003AE31C /* Int+Extension.swift */,
 				063CE3DB262209CB0023A192 /* Theme.swift */,
 				060EDF2A261CDBD100294A11 /* Supporting Files */,
 				060EDF23261CDB7900294A11 /* Info.plist */,
@@ -155,11 +164,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				060EDF1A261CDB7700294A11 /* ConcantrationGameViewController.swift in Sources */,
+				06C8CE88262E3BAA003AE31C /* Int+Extension.swift in Sources */,
 				063CE3D6261F82560023A192 /* Concentration.swift in Sources */,
 				063CE3D9261F83240023A192 /* Card.swift in Sources */,
 				063CE3DC262209CB0023A192 /* Theme.swift in Sources */,
+				06C8CE8F262E42C5003AE31C /* ConcentrationGameProtocol.swift in Sources */,
 				060EDF16261CDB7700294A11 /* AppDelegate.swift in Sources */,
 				060EDF18261CDB7700294A11 /* SceneDelegate.swift in Sources */,
+				06C8CE8B262E3BCF003AE31C /* Collection+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

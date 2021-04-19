@@ -7,28 +7,34 @@
 
 import UIKit
 
-/// Controlls representation of concentration game on view
 class ConcantrationGameViewController: UIViewController {
+    
     // MARK: - Outlets
+    
     @IBOutlet private weak var startNewGameButton: UIButton!
     @IBOutlet private var cardButtons: [UIButton]!
     @IBOutlet private weak var flipCountLabel: UILabel!
     
     // MARK: - Non private variables
+    
     var emoji = [Int:String]()
     lazy var currentTheme = game.currentTheme
+    
     var numberOfPairsOfCards: Int {
           return (cardButtons.count + 1) / 2
     }
     
     // MARK: - Private variables
+    
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
-    // MARK: - Actions
+    // MARK: - Private actions
+    
     /// Action responsible for logic when any card is touched
     /// - Parameter sender: Pressed cards
     @IBAction private func touchCard(_ sender: UIButton) {
         game.flipCount += 1
+        
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
             updateCards()
@@ -41,6 +47,7 @@ class ConcantrationGameViewController: UIViewController {
         game.flipCount = 0
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
         game.delegate = self
+        
         currentTheme = game.currentTheme
         emoji.removeAll()
         applyTheme()
@@ -51,7 +58,8 @@ class ConcantrationGameViewController: UIViewController {
         }
     }
     
-    // MARK: - Concentration game logic methods
+    // MARK: - Instance Methods
+    
     /// Function responsible for logic of showing cards for the user while he is playing the game
     private func updateCards() {
         for index in cardButtons.indices {
@@ -86,33 +94,28 @@ class ConcantrationGameViewController: UIViewController {
         view.backgroundColor = game.currentTheme.gameBackground
         startNewGameButton.backgroundColor = game.currentTheme.buttonColor
         flipCountLabel.textColor = currentTheme.buttonColor
-    }
-    
-    override func viewDidLoad() {
-        game.delegate = self
-        applyTheme()
+        
         for index in cardButtons.indices {
             cardButtons[index].backgroundColor = currentTheme.buttonColor
         }
     }
-}
-
-// MARK: - Extensions
-extension ConcantrationGameViewController: ConcentrationDelegate {
-    func concentrationDidChange() {
-        flipCountLabel.text = "Flips: " + String(game.flipCount)
+    
+    // MARK: - UIViewController
+    
+    override func viewDidLoad() {
+        game.delegate = self
+        applyTheme()
     }
 }
 
-extension Int {
-    var arc4random: Int {
-        if self > 0 {
-            return Int(arc4random_uniform(UInt32(self)))
-        } else if self < 0 {
-            return -Int(arc4random_uniform(UInt32(abs(self))))
-        } else {
-            return 0
-        }
+// MARK: - ConcentrationDelegate
+
+extension ConcantrationGameViewController: ConcentrationDelegate {
+    
+    // MARK: - Instance Methods
+    
+    func concentrationDidChange() {
+        flipCountLabel.text = "Flips: " + String(game.flipCount)
     }
 }
 
