@@ -9,7 +9,7 @@ import Foundation
 
 extension Collection {
     
-    // MARK: - Instance Methods
+    // MARK: - Instance properties
     
     var oneAndOnly: Element? {
         return count == 1 ? first: nil

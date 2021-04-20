@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ConcentrationDelegate {
+protocol ConcentrationDelegate: AnyObject {
     
     // MARK: - Instance Methods
     
@@ -18,16 +18,16 @@ class Concentration {
     
     // MARK: - Non private variables
     
-    var delegate: ConcentrationDelegate? = nil
+    weak var delegate: ConcentrationDelegate? = nil
     
     var currentTheme = Theme(emojiChoices: [""], buttonColor: UIColor.orange, gameBackground: UIColor.black) {
-        didSet{
+        didSet {
             delegate?.concentrationDidChange()
         }
     }
     
     var flipCount = 0 {
-        didSet{
+        didSet {
             delegate?.concentrationDidChange()
         }
     }
@@ -44,6 +44,7 @@ class Concentration {
         get {
             return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
         }
+        
         set {
             for index in cards.indices {
                 cards[index].isFaceUp = (index == newValue)

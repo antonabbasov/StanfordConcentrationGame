@@ -34,7 +34,7 @@ struct Card {
     }
 }
 
-// MARK: - Extensions
+// MARK: - Hashable
 
 extension Card: Hashable {
     
